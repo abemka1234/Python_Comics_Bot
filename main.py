@@ -6,7 +6,6 @@ from download_comic import download_random_comic
 
 def public_image(image_path,token,chat_id,alt):
     bot = telegram.Bot(token)
-    print(bot.getUpdates())
     with open(image_path, 'rb') as file:
         bot.send_photo(chat_id,file,caption=alt)
 
