@@ -13,7 +13,8 @@ def public_image(image_path,token,chat_id,alt):
 def main():
     dotenv.load_dotenv()
     token = os.getenv('TOKEN')
-    public_image('comic.png',token,'-1002334774251',download_random_comic())
+    chat_id = os.getenv('CHAT_ID')
+    public_image('comic.png',token,chat_id,download_random_comic())
     os.remove('comic.png')
 
 
