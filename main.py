@@ -11,11 +11,13 @@ def public_image(image_path,token,chat_id,alt):
 
 
 def main():
-    dotenv.load_dotenv()
-    token = os.getenv('TOKEN')
-    chat_id = os.getenv('CHAT_ID')
-    public_image('comic.png',token,chat_id,download_random_comic())
-    os.remove('comic.png')
+    try:
+        dotenv.load_dotenv()
+        token = os.getenv('TOKEN')
+        chat_id = os.getenv('CHAT_ID')
+        public_image('comic.png',token,chat_id,download_random_comic())
+    finally:
+        os.remove('comic.png')
 
 
 if __name__ == '__main__':
